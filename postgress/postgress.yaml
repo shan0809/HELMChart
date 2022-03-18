@@ -1,0 +1,9 @@
+#postgres:
+#  config:
+#    data:
+      - key: POSTGRES_DB
+        value: postgress
+      - key: POSTGRES_USER
+        value: shan
+      - key: POSTGRES_PASSWORD
+        value: secret
