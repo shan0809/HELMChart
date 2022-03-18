@@ -1,0 +1,24 @@
+namespace:
+  - name: firstnamespace
+  - name: secondnamespace
+labels:
+  name: demo-a
+kind: Pod
+podname: nginx-helmpod
+containername: nginx-container
+image: "nginx:1.16.0"
+configname: nginx-configmap
+volume:
+  path: /usr/share/nginx/html
+  pathname: nginx-path
+  configname: nginx-configmap
+type: Namespace
+service:
+  type: NodePort
+  labels:
+    app: nginx
+  port: 80
+  protocol: TCP
+  targetPort: 80
+replicacount: 2
+imagenginx: "nginx:1.16.0"
