@@ -1,3 +1,5 @@
+createsecret: true
+resourcename: secret
 namespace:
   - name: firstnamespace
   - name: secondnamespace
@@ -14,6 +16,12 @@ volume:
   configname: nginx-configmap
 type: Namespace
 service:
+  network:
+    enabled: disable
+  python:
+    enabled: true
+  nginxport:
+    enabled: true
   type: NodePort
   labels:
     app: nginx
@@ -22,3 +30,31 @@ service:
   targetPort: 80
 replicacount: 2
 imagenginx: "nginx:1.16.0"
+networkname: network
+secretflag: createt456456
+poddisruptionbudget:
+  enabled: true
+  minAvaliable: 1
+  maxUnavailable: 1
+extra:
+  secret: []
+secret:
+  creds:
+    secretid: "randomsecretid"
+    secretidtwo: "randomesecrettwo"
+
+secret1:
+  secret2:
+    secret3:
+      blockkey:
+        fromstring:
+          active:
+            secretName:
+            key:
+
+      haskey:
+        fromstring:
+          active:
+        fromsecret:
+            secretName:
+            key:

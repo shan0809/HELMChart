@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
+    {{- include "secret.defaultlabels" . | nindent 4}}
     {{- $replica := .Values.replicacount }}
     {{- $image := .Values.imagenginx}}
     {{- with .Values.service }}
